@@ -42,4 +42,4 @@ supplied which guides any user without the key.
 
 There's also a requirements.txt file which informs on all the requirements to run the app
 
-this app is hosted on the website https://morning-tundra-56147.herokuapp.com/
+this app is hosted on the website https://morning-tundra-56147.herokuapp.com/  

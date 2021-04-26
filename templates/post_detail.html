@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="post-entry">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+    </div>
+    <a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a>
+    <a href="{% url 'post_delete' post.pk %}">- Delete Blog Post</a>
+
+    <br>
+
+    <hr>
+    <h2>Comments...</h2>
+    <br>
+    {% if not post.comments.all %}
+        No Comments Yet... <a href="#"> Add One </a>
+    {% else %}
+        {% for comment in post.comments.all %}
+            <strong>
+                {{ comment.name }}
+                {{ comment.date.added }}
+            </strong>
+            <br>
+            {{ comment.body }}
+            <br>
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

@@ -18,4 +18,4 @@ class PasswordsChangeView(PasswordChangeView):
 
 
 def password_success(request):
-    return render(request, 'registration/password_success.html', {} )
+    return render(request, 'registration/password_success.html', {})

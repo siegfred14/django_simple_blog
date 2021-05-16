@@ -18,11 +18,11 @@
     {% else %}
         {% for comment in post.comments.all %}
             <strong>
-                {{ comments.name }}
-                {{ comments.date.added }}
+                {{ comment.name }} -
+                {{ comment.date.added }}
             </strong>
             <br>
-            {{ comments.body }}
+            {{ comment.body }}
             <br>
             <hr>
         {% endfor %}

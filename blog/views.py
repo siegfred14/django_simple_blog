@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Post, Comment
+from .forms import CommentForm
 
 
 # Create your views here.
@@ -23,8 +24,10 @@ class BlogCreateView(CreateView):
 
 class BlogCommentView(CreateView):
     model = Comment
+    form_class = CommentForm
     template_name = 'add_comments.html'
-    fields = '__all__'
+    # fields = '__all__'
+    success_url = reverse_lazy('home')
 
 
 class BlogUpdateView(UpdateView):

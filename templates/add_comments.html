@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Comment On Blog Post!
+{% endblock %}
 
-</body>
-</html>
+{% block content %}
+
+{% if user.is_authenticated %}
+
+    <h1>Add Comment</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save Comment">
+    </form>
+{% else %}
+    Log In To Post Comment!
+{% endif %}
+
+{% endblock %}
